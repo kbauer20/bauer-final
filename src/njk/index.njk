@@ -7,22 +7,37 @@
 {% block content %}
 <div class="container">
   <div class="row">
-    <div class="col-sm-12">
+    <div class="col-md-6 offset-md-3">
       <h1>About the Band</h1>
       <p><a href="https://en.wikipedia.org/wiki/Queen_(band)">Queen</a> are a British rock band formed in London in 1970. Their classic line-up was Freddie Mercury (lead vocals, piano), Brian May (guitar, vocals), Roger Taylor (drums, vocals) and John Deacon (bass). Their earliest works were influenced by progressive rock, hard rock and heavy metal, but the band gradually ventured into more conventional and radio-friendly works by incorporating further styles, such as arena rock and pop rock.</p>
     </div>
   </div>
   <div class="row">
     {% for member in queen.members %}
-    <div class="col">
+    <div class="col-sm-6 col-md-3">
       <div class="card">
         <img src="img/members/{{member.image}}" class="card-img-top" alt="...">
-        <div class="card-body">
+        <div class="card-body w3-grey">
           <h5 class="card-title">{{member.name}}</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+          <p class="card-text">{{member.tenure}}</p>
+          <a href="{{ member.slug }}.html" class="btn btn-primary">See More</a>
         </div>
       </div>
+    </div>
+    {% endfor %}
+  </div>
+  <div class="row">
+    {% for discography in queen.discography %}
+    <div class="col">
+      <ul class="list-unstyled">
+        <li class="media">
+          <img src="img/discs/{{discography.image}}" class="mr-3" alt="...">
+          <div class="media-body">
+            <h5 class="mt-0 mb-1">{{discography.title}}</h5>
+            <p>{{discography.year}}</p>
+          </div>
+        </li>
+      </ul>
     </div>
     {% endfor %}
   </div>

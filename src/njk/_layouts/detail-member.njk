@@ -9,13 +9,15 @@
   <div class="row">
     <div class="col-sm-4">
       {% block info %}
-        <img src="https://placekitten.com/420/320" alt="" class="img-fluid">
-        <p>{{ book.author }}</p>
+        <img src="img/members/{{member.imagebw}}" alt="" class="img-fluid">
+        <p>{{ member.instruments }}</p>
       {% endblock %}
     </div>
     <div class="col-sm-8">
       {% block blurb %}
         <h1>{{ member.name }}</h1>
+        <h2>{{member.birthdate}}</h2>
+        <h3>{{member.birthplace}}</h3>
         <p>{{ member.text|safe }}</p>
       {% endblock %}
     </div>
