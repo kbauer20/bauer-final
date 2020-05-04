@@ -1,4 +1,4 @@
-h1, h2, h3, h4, h5, p {
+h1, h2, h3, h4, h5, p, th, td {
   font-family: 'Merriweather', serif;
 }
 
@@ -8,8 +8,13 @@ h2, h3 {
 
 .card {
   margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 .list-unstyled {
   margin-top: 1rem;
+}
+
+.media img {
+  width: 50%;
 }

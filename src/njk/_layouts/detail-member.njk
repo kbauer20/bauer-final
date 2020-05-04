@@ -1,6 +1,6 @@
 {% extends '_layouts/base.njk' %}
 
-{% block page_title %}{{ book.title }}{% endblock %}
+{% block page_title %}{{ member.name }}{% endblock %}
 
 {% block page_description %}{{ book.title }} by {{ book.author }}{% endblock %}
 
@@ -10,14 +10,14 @@
     <div class="col-sm-4">
       {% block info %}
         <img src="img/members/{{member.imagebw}}" alt="" class="img-fluid">
-        <p>{{ member.instruments }}</p>
+        <p>Instruments: {{ member.instruments }}</p>
       {% endblock %}
     </div>
     <div class="col-sm-8">
       {% block blurb %}
         <h1>{{ member.name }}</h1>
-        <h2>{{member.birthdate}}</h2>
-        <h3>{{member.birthplace}}</h3>
+        <h2>Birthdate: {{ member.birthdate }}</h2>
+        <h3>Birthplace: {{ member.birthplace }}</h3>
         <p>{{ member.text|safe }}</p>
       {% endblock %}
     </div>
