@@ -2,7 +2,7 @@
 
 {% block page_title %}{{ member.name }}{% endblock %}
 
-{% block page_description %}{{ book.title }} by {{ book.author }}{% endblock %}
+{% block page_description %}{{ member.name }}{% endblock %}
 
 {% block content %}
 <article class="container">
@@ -16,7 +16,7 @@
     <div class="col-sm-8">
       {% block blurb %}
         <h1>{{ member.name }}</h1>
-        <h2>Birthdate: {{ member.birthdate }}</h2>
+        <h3>Birthdate: {{ member.birthdate }}</h3>
         <h3>Birthplace: {{ member.birthplace }}</h3>
         <p>{{ member.text|safe }}</p>
       {% endblock %}

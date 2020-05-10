@@ -5,42 +5,43 @@
 {% block page_description %}The official website of Queen.{% endblock %}
 
 {% block content %}
-<div class="container">
-  <div class="row">
-    <div class="col-md-8 offset-md-2">
-      <h1>About the Band</h1>
-      <p><a href="https://en.wikipedia.org/wiki/Queen_(band)">Queen</a> are a British rock band formed in London in 1970. Their classic line-up was Freddie Mercury (lead vocals, piano), Brian May (guitar, vocals), Roger Taylor (drums, vocals) and John Deacon (bass). Their earliest works were influenced by progressive rock, hard rock and heavy metal, but the band gradually ventured into more conventional and radio-friendly works by incorporating further styles, such as arena rock and pop rock.</p>
-    </div>
-  </div>
-  <div class="row">
-    {% for member in queen.members %}
-    <div class="col-sm-6 col-lg-3">
-      <div class="card">
-        <img src="img/members/{{member.image}}" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">{{member.name}}</h5>
-          <p class="card-text">Tenure: {{member.tenure}}</p>
-          <a href="{{ member.slug }}.html" class="btn btn-dark">See More</a>
-        </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 offset-md-2">
+        <h1>About the Band</h1>
+        <p> Queen are a British rock band formed in London in 1970. Their classic line-up was Freddie Mercury (lead vocals, piano), Brian May (guitar, vocals), Roger Taylor (drums, vocals) and John Deacon (bass). Their earliest works were influenced by progressive rock, hard rock and heavy metal, but the band gradually ventured into more conventional and radio-friendly works by incorporating further styles, such as arena rock and pop rock.</p>
+        <p>- Source:<a href="https://en.wikipedia.org/wiki/Queen_(band)">Wikipedia</a></p>
       </div>
     </div>
-    {% endfor %}
-  </div>
-  <h1 class="text-center">Queen Discography</h1>
-  <div class="row">
-    {% for discography in queen.discography %}
-    <div class="col-md-6">
-      <ul class="list-unstyled">
-        <li class="media">
-          <img src="img/discs/{{discography.image}}" class="mr-3 img-fluid" alt="...">
-          <div class="media-body">
-            <h5 class="mt-0 mb-1">{{discography.title}}</h5>
-            <p>{{discography.year}}</p>
+    <div class="row">
+      {% for member in queen.members %}
+      <div class="col-sm-6 col-lg-3">
+        <div class="card">
+          <img src="img/members/{{member.image}}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{member.name}}</h5>
+            <p class="card-text">Tenure: {{member.tenure}}</p>
+            <a href="{{ member.slug }}.html" class="btn btn-dark">See More</a>
           </div>
-        </li>
-      </ul>
+        </div>
+      </div>
+      {% endfor %}
     </div>
-    {% endfor %}
+    <h1 class="text-center">Queen Discography</h1>
+    <div class="row">
+      {% for discography in queen.discography %}
+      <div class="col-md-6">
+        <ul class="list-unstyled">
+          <li class="media">
+            <img src="img/discs/{{discography.image}}" class="mr-3 img-fluid" alt="...">
+            <div class="media-body">
+              <h5 class="mt-0 mb-1">{{discography.title}}</h5>
+              <p>{{discography.year}}</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+      {% endfor %}
+    </div>
   </div>
-</div>
 {% endblock %}
